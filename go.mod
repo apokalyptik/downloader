@@ -3,6 +3,7 @@ module github.com/apokalyptik/downloader
 go 1.18
 
 require (
+	github.com/adrg/xdg v0.4.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/wailsapp/wails/v2 v2.4.1
 )

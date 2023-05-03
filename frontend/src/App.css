@@ -1,28 +1,31 @@
 #app {
-    height: 100vh;
-    text-align: center;
+    width: 100wv;
+    height:100hv;
+    overflow: auto;
 }
 
-#logo {
-    display: block;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    padding: 10% 0 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-origin: content-box;
+input {
+    border-color: #333333;
 }
 
-.result {
-    height: 20px;
-    line-height: 20px;
-    margin: 1.5rem auto;
+button {
+    background-color: #00a0d2;
+    border-color: #333333;
+    color: white;
 }
 
-.input-box .btn {
-    width: 60px;
+#input {
+    position: absolute;
+    top: 1em;
+    width: 98%;
+    margin-left: 1%;
+    height: 2em;
+}
+
+#download {
+    position: relative;
+    width: 15%;
+    left: 3%;
     height: 30px;
     line-height: 30px;
     border-radius: 3px;
@@ -32,12 +35,15 @@
     cursor: pointer;
 }
 
-.input-box .btn:hover {
+#download:hover {
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     color: #333333;
 }
 
-.input-box .input {
+#url {
+    position: relative;
+    left: 4%;
+    width: 74%;
     border: none;
     border-radius: 3px;
     outline: none;
@@ -48,12 +54,102 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.input-box .input:hover {
+#url:hover {
     border: none;
     background-color: rgba(255, 255, 255, 1);
 }
 
-.input-box .input:focus {
+#url:focus {
     border: none;
     background-color: rgba(255, 255, 255, 1);
+}
+
+#downloadsection {
+    position: absolute;
+    top: 4em;
+    width: 98%;
+    margin-left: 1%;
+    clear: both;
+}
+
+#downloadlist {
+    float: left;
+    top: 0px;
+    left: 1%;
+    width: 98%;
+}
+
+.downloadSummary {
+    border-radius: 1em;
+    background-color: #00a0d2;
+    border: 1 px solid #333333;
+    margin: 1em;
+    padding: 0.5em 1em 1em 1em;
+}
+
+.downloadSummary .saveButton {
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    width: 3em;
+    height: 1.4em;
+    border-radius: 0.2em;
+    border: 1px solid #333333;
+    background-color: #222222;
+    color: white;
+}
+
+.downloadSummary .saveButton:hover {
+    cursor: pointer;
+    background-color: #444444;
+    border: 1px solid #333333;
+}
+
+.downloadSummary .cancelButton,
+.downloadSummary .pauseButton {
+    float: right;
+    margin-left: 0.5em;
+    text-align: center;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 0.2em;
+    border: 1px solid #333333;
+    background-color: #222222;
+    color: white;
+}
+
+.downloadSummary .cancelButton:hover,
+.downloadSummary .pauseButton:hover {
+    cursor: pointer;
+    background-color: #444444;
+    border: 1px solid #333333;
+}
+
+.downloadSummary h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.downloadSummary .url {
+    color: #0073aa;
+    margin-left: 1em;
+}
+
+.downloadSummary .bytes {
+    margin-left:1em;
+}
+
+.downloadSummary .progress {
+    min-height: 0.5em;
+    border: 1 px solid #333333;
+    background-color: #0073aa;
+    border-radius: 0.3em;
+    margin-left:1em;
+    margin-right:1em;
+}
+
+.downloadSummary .progress .pct {
+    background-color: white;
+    min-height: 0.5em;
+    border-radius: 0.3em;
 }

@@ -1,10 +1,5 @@
-html {
-    background-color: rgba(27, 38, 54, 1);
-    text-align: center;
-    color: white;
-}
-
 body {
+    background-color: #0073aa;
     margin: 0;
     color: white;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -20,19 +15,3 @@ body {
     url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
 }
 
-#app {
-    height: 100vh;
-    text-align: center;
-}
-
-#url {
-    width: 70em;
-}
-
-#download {
-    width: 10em;
-}
-
-#error {
-    color: red;
-}

@@ -16,18 +16,21 @@ func main() {
 	app := NewApp()
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "Resumable Downloader",
+		Title:  "Downloader",
 		Width:  1024,
-		Height: 240,
+		Height: 220,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
+		BackgroundColour: &options.RGBA{R: 0, G: 160, B: 210, A: 1},
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
 		},
-		DisableResize: true,
+		DisableResize: false,
+		Debug: options.Debug{
+			OpenInspectorOnStartup: false,
+		},
 	})
 
 	if err != nil {
