@@ -38,7 +38,8 @@ func main() {
 	widgetDownloadURL.OnChanged = func(newDownloadURL string) {
 		downloadURL = newDownloadURL
 	}
-	widgetDownloadURL.SetText("https://cdimage.debian.org/debian-cd/current/amd64/iso-bd/debian-edu-12.7.0-amd64-BD-1.iso")
+	// when developing... this is helpful
+	// widgetDownloadURL.SetText("https://cdimage.debian.org/debian-cd/current/amd64/iso-bd/debian-edu-12.7.0-amd64-BD-1.iso")
 
 	widgetProgressBar = widget.NewProgressBar()
 	widgetProgressBar.Min = 0
