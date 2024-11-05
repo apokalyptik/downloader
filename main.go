@@ -56,28 +56,8 @@ func main() {
 			if localDownloader == nil || localDownloader.URL != downloadURL {
 				localDownloader = newDownloader(downloadURL)
 			}
-			if localDownloader.HeadResponse == nil {
-				window.SetTitle("Downloader - Checking URL")
-				if err := localDownloader.head(); err != nil {
-					dialog.ShowError(err, window)
-					return
-				}
-			}
-			widgetProgressBar.Max = float64(localDownloader.HeadResponse.Bytes)
-			window.SetTitle(
-				fmt.Sprintf(
-					"Download - %s 0/%s",
-					localDownloader.Filename,
-					niceByteString(localDownloader.HeadResponse.Bytes),
-				),
-			)
-			if !localDownloader.HeadResponse.AcceptRanges {
-				dialog.ShowError(
-					fmt.Errorf("The requested URL does not support resuming. Attempting to download anyway"),
-					window,
-				)
-			}
 			window.Resize(sizeSave)
+			window.SetTitle("Downloader - Choose a folder to save the file into")
 			dialog.ShowFolderOpen(
 				func(choice fyne.ListableURI, err error) {
 					window.Resize(sizeNormal)
